@@ -1,21 +1,21 @@
-pipeline{
+pipeline {
     agent any
-    stages{
+    stages {
 
         stage("Environment Building"){
-            step{
+            steps {
                 echo "Building"
             }
         }
 
         stage("Testing"){
-            step{
+            steps {
                 echo "Running the test"
             }
         }
 
         stage("Deploy"){
-            step{
+            steps {
                 echo "Deploy to the tomcat"
             }
         }
