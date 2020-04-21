@@ -24,7 +24,7 @@ pipeline {
             steps {
                 echo "Deploy to the tomcat"
                 script {
-                    sh 'java -jar ./build/libs/docker-0.1.jar'
+                    sh 'java -jar ./build/libs/docker-jenkins.0.1.jar'
                 }
             }
         }
