@@ -2,21 +2,30 @@ pipeline {
     agent any
     stages {
 
-        stage("Environment Building"){
+        stage("Environment Setup"){
             steps {
-                echo "Building"
+                echo "Cleaning"
+                script{
+                    sh './gradlew clean'
+                }
             }
-        }
 
-        stage("Testing"){
+        stage("Building"){
             steps {
-                echo "Running the test"
+              echo 'Building'
+                 script{
+                     sh './gradlew clean build'
+                 }
             }
         }
 
         stage("Deploy"){
             steps {
                 echo "Deploy to the tomcat"
+                script {
+                    cd build/libs
+                    sh 'java -jar docker-0.1.jar'
+                }
             }
         }
     }
