@@ -9,6 +9,7 @@ pipeline {
                     sh './gradlew clean'
                 }
             }
+        }
 
         stage("Building"){
             steps {
@@ -28,5 +29,6 @@ pipeline {
                 }
             }
         }
+
     }
 }
